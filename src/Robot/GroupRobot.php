@@ -44,7 +44,7 @@ class GroupRobot
     {
         $result = $message->getMessage();
         if ($this->param->getSecret()) {
-            $result['timestamp'] = time() . '';
+            $result['timestamp'] = time();
             $result['sign'] = $this->sign($this->param->getSecret(), $result['timestamp']);
         }
         return $result;
