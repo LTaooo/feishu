@@ -2,6 +2,8 @@
 
 namespace Ltaooo\FeiShu\Robot\Message;
 
+use Ltaooo\FeiShu\Robot\Enum\RobotMessageTypeEnum;
+
 class TextMessage extends AbstractMessage
 {
     private string $text;
@@ -16,9 +18,9 @@ class TextMessage extends AbstractMessage
         return RobotMessageTypeEnum::TEXT;
     }
 
-    public function getContent(): string
+    public function getContent(): array
     {
-        return json_encode(['text' => $this->text]);
+        return ['text' => $this->text];
     }
 
     public function append(string $string): static

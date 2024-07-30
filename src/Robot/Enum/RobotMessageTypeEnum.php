@@ -1,6 +1,6 @@
 <?php
 
-namespace Ltaooo\FeiShu\Robot\Message;
+namespace Ltaooo\FeiShu\Robot\Enum;
 
 enum RobotMessageTypeEnum: string
 {
