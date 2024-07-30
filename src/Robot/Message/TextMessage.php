@@ -29,9 +29,15 @@ class TextMessage extends AbstractMessage
         return $this;
     }
 
-    public function appendAt(string $id): static
+    public function at(string $id, string $name): static
     {
-        $this->text .= '<at user_id="' . $id . '">名字</at>';
+        $this->text .= '<at user_id="' . $id . '">' . $name . '</at>';
+        return $this;
+    }
+
+    public function atAll(string $name = '所有人'): static
+    {
+        $this->text .= '<at user_id="all">' . $name . '</at>';
         return $this;
     }
 }
